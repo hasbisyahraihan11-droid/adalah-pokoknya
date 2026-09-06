@@ -1,1 +1,897 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAYRR JOKI</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #061219;
+      color: white;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #071820;
+      border-bottom: 1px solid #17343d;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #55e6d0;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: 70vh;
+      padding: 60px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, #17404a, #061219 70%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #55e6d0;
+    }
+
+    .hero p {
+      color: #a7bec4;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      background: #55e6d0;
+      color: #061219;
+      padding: 14px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .title h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .title p {
+      color: #8da8af;
+    }
+
+    /* GAME */
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .game-card {
+      background: #0a2029;
+      border: 1px solid #173943;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .game-image {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      background: #102b34;
+    }
+
+    .game-info {
+      padding: 25px;
+    }
+
+    .game-info h3 {
+      color: #55e6d0;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .game-info p {
+      color: #9eb7bd;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* PRICE */
+
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .price-card {
+      background: #0a2029;
+      border: 1px solid #173943;
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .price-card h3 {
+      color: #55e6d0;
+      margin-bottom: 8px;
+    }
+
+    .game-name {
+      color: #718e95;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      color: #a8bec3;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .price-card li::before {
+      content: "✓ ";
+      color: #55e6d0;
+    }
+
+    .small-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ORDER */
+
+    .order-box {
+      max-width: 600px;
+      margin: auto;
+      background: #0a2029;
+      border: 1px solid #173943;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 7px;
+      color: #b5cbd0;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      border: 1px solid #244852;
+      background: #061219;
+      color: white;
+      outline: none;
+    }
+
+    .order-btn {
+      width: 100%;
+      margin-top: 25px;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #6f8b92;
+      border-top: 1px solid #12343e;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .games {
+        grid-template-columns: 1fr;
+      }
+
+      .price-list {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+
+      .game-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">NAYRR JOKI</div>
+
+    <a href="#order">Order</a>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Joki Gaming<br>
+        <span>Genshin & VD</span>
+      </h1>
+
+      <p>
+        Jasa joki gaming terpercaya untuk
+        Genshin Impact dan Roblox Violence District.
+      </p>
+
+      <a href="#price" class="btn">
+        💰 Lihat Price List
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAME -->
+
+  <section>
+
+    <div class="title">
+
+      <h2>Game Kami</h2>
+
+      <p>
+        Pilih game yang ingin kamu mainkan.
+      </p>
+
+    </div>
+
+
+    <div class="games">
+
+
+      <!-- GENSHIN -->
+
+      <div class="game-card">
+
+        <!--
+        GANTI GAMBAR DI BAWAH INI
+
+        Contoh:
+        genshin.jpg
+
+        Taruh file gambar di folder yang sama
+        dengan index.html
+        -->
+
+        <img
+          src="genshin.jpg"
+          alt="Genshin Impact"
+          class="game-image"
+        >
+
+        <div class="game-info">
+
+          <h3>🎮 Genshin Impact</h3>
+
+          <p>
+            Joki quest, farming, exploration,
+            Spiral Abyss dan kebutuhan lainnya.
+          </p>
+
+          <a href="#order" class="btn">
+            Order Genshin
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- VIOLENCE DISTRICT -->
+
+      <div class="game-card">
+
+        <!--
+        GANTI GAMBAR DI BAWAH INI
+
+        Contoh:
+        vd.jpg
+
+        Taruh file gambar di folder yang sama
+        dengan index.html
+        -->
+
+        <img
+          src="vd.jpg"
+          alt="Violence District"
+          class="game-image"
+        >
+
+        <div class="game-info">
+
+          <h3>🔫 Violence District</h3>
+
+          <p>
+            Joki farming, mission, progress
+            dan custom request.
+          </p>
+
+          <a href="#order" class="btn">
+            Order VD
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICE LIST -->
+
+  <section id="price">
+
+    <div class="title">
+
+      <h2>💰 Price List</h2>
+
+      <p>
+        Harga joki kami.
+      </p>
+
+    </div>
+
+
+    <div class="price-list">
+
+
+      <!-- GENSHIN 1 -->
+
+      <div class="price-card">
+
+        <h3>Daily Commission</h3>
+
+        <div class="game-name">
+          GENSHIN IMPACT
+        </div>
+
+        <!-- GANTI HARGA DI SINI -->
+
+        <div class="price">
+          Rp5.000
+        </div>
+
+        <ul>
+          <li>4 Daily Commission</li>
+          <li>Fast Process</li>
+          <li>Progress Aman</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Genshin Impact','Daily Commission')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+      <!-- GENSHIN 2 -->
+
+      <div class="price-card">
+
+        <h3>Spiral Abyss</h3>
+
+        <div class="game-name">
+          GENSHIN IMPACT
+        </div>
+
+        <!-- GANTI HARGA DI SINI -->
+
+        <div class="price">
+          Rp10.000
+        </div>
+
+        <ul>
+          <li>Spiral Abyss</li>
+          <li>Fast Process</li>
+          <li>Progress Aman</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Genshin Impact','Spiral Abyss')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+      <!-- GENSHIN 3 -->
+
+      <div class="price-card">
+
+        <h3>Exploration</h3>
+
+        <div class="game-name">
+          GENSHIN IMPACT
+        </div>
+
+        <!-- GANTI HARGA DI SINI -->
+
+        <div class="price">
+          Rp15.000
+        </div>
+
+        <ul>
+          <li>Exploration</li>
+          <li>Chest Farming</li>
+          <li>Fast Process</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Genshin Impact','Exploration')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+      <!-- VD 1 -->
+
+      <div class="price-card">
+
+        <h3>Farming</h3>
+
+        <div class="game-name">
+          ROBLOX — VIOLENCE DISTRICT
+        </div>
+
+        <!-- GANTI HARGA DI SINI -->
+
+        <div class="price">
+          Rp10.000
+        </div>
+
+        <ul>
+          <li>Farming</li>
+          <li>Fast Process</li>
+          <li>Progress Aman</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Roblox - Violence District','Farming')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+      <!-- VD 2 -->
+
+      <div class="price-card">
+
+        <h3>Mission</h3>
+
+        <div class="game-name">
+          ROBLOX — VIOLENCE DISTRICT
+        </div>
+
+        <!-- GANTI HARGA DI SINI -->
+
+        <div class="price">
+          Rp15.000
+        </div>
+
+        <ul>
+          <li>Mission</li>
+          <li>Fast Process</li>
+          <li>Progress Aman</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Roblox - Violence District','Mission')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+      <!-- VD 3 -->
+
+      <div class="price-card">
+
+        <h3>Custom Request</h3>
+
+        <div class="game-name">
+          ROBLOX — VIOLENCE DISTRICT
+        </div>
+
+        <div class="price">
+          Tanya WA
+        </div>
+
+        <ul>
+          <li>Request bebas</li>
+          <li>Konsultasi</li>
+          <li>Harga menyesuaikan</li>
+        </ul>
+
+        <a
+          href="#order"
+          class="btn small-btn"
+          onclick="pilihLayanan('Roblox - Violence District','Custom Request')"
+        >
+          Order
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ORDER -->
+
+  <section id="order">
+
+    <div class="title">
+
+      <h2>📱 Order Sekarang</h2>
+
+      <p>
+        Isi data lalu langsung kirim ke WhatsApp.
+      </p>
+
+    </div>
+
+
+    <div class="order-box">
+
+      <label>Game</label>
+
+      <select id="game" onchange="ubahGame()">
+
+        <option value="Genshin Impact">
+          Genshin Impact
+        </option>
+
+        <option value="Roblox - Violence District">
+          Roblox - Violence District
+        </option>
+
+      </select>
+
+
+      <label>Layanan</label>
+
+      <select id="layanan">
+      </select>
+
+
+      <label id="labelID">
+        UID Genshin
+      </label>
+
+      <input
+        type="text"
+        id="identitas"
+        placeholder="Masukkan UID"
+      >
+
+
+      <div id="serverBox">
+
+        <label>Server</label>
+
+        <select id="server">
+
+          <option>Asia</option>
+          <option>America</option>
+          <option>Europe</option>
+          <option>TW, HK, MO</option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        class="btn order-btn"
+        onclick="orderWA()"
+      >
+        📱 Order via WhatsApp
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 NAYRR JOKI
+  </footer>
+
+
+  <script>
+
+    /* =========================
+       NOMOR WHATSAPP
+       ========================= */
+
+    const nomorWA = "6283194349384";
+
+
+    /* =========================
+       DAFTAR LAYANAN
+       ========================= */
+
+    const layananGame = {
+
+      "Genshin Impact": [
+        "Daily Commission",
+        "Spiral Abyss",
+        "Exploration",
+        "Archon Quest",
+        "Primogem Farming",
+        "Character Build",
+        "Custom Request"
+      ],
+
+      "Roblox - Violence District": [
+        "Farming",
+        "Mission",
+        "Progress",
+        "Custom Request"
+      ]
+
+    };
+
+
+    /* =========================
+       UBAH GAME
+       ========================= */
+
+    function ubahGame() {
+
+      const game =
+        document.getElementById("game").value;
+
+      const layanan =
+        document.getElementById("layanan");
+
+      const labelID =
+        document.getElementById("labelID");
+
+      const identitas =
+        document.getElementById("identitas");
+
+      const serverBox =
+        document.getElementById("serverBox");
+
+
+      layanan.innerHTML = "";
+
+
+      layananGame[game].forEach(function(item) {
+
+        const option =
+          document.createElement("option");
+
+        option.value = item;
+        option.textContent = item;
+
+        layanan.appendChild(option);
+
+      });
+
+
+      if (game === "Genshin Impact") {
+
+        labelID.textContent = "UID Genshin";
+
+        identitas.placeholder =
+          "Masukkan UID";
+
+        serverBox.style.display =
+          "block";
+
+      } else {
+
+        labelID.textContent =
+          "Username Roblox";
+
+        identitas.placeholder =
+          "Masukkan username Roblox";
+
+        serverBox.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* =========================
+       PILIH LAYANAN DARI PRICE LIST
+       ========================= */
+
+    function pilihLayanan(game, layananDipilih) {
+
+      document.getElementById("game").value = game;
+
+      ubahGame();
+
+      document.getElementById("layanan").value =
+        layananDipilih;
+
+    }
+
+
+    /* =========================
+       ORDER WHATSAPP
+       ========================= */
+
+    function orderWA() {
+
+      const game =
+        document.getElementById("game").value;
+
+      const layanan =
+        document.getElementById("layanan").value;
+
+      const identitas =
+        document.getElementById("identitas").value;
+
+      const server =
+        document.getElementById("server").value;
+
+
+      if (identitas.trim() === "") {
+
+        alert(
+          "Isi UID / Username terlebih dahulu!"
+        );
+
+        return;
+
+      }
+
+
+      let pesan =
+        "Halo kak, saya mau order joki.%0A%0A";
+
+      pesan +=
+        "🎮 Game: " +
+        encodeURIComponent(game) +
+        "%0A";
+
+      pesan +=
+        "⚡ Layanan: " +
+        encodeURIComponent(layanan) +
+        "%0A";
+
+      pesan +=
+        "🆔 UID / Username: " +
+        encodeURIComponent(identitas) +
+        "%0A";
+
+
+      if (game === "Genshin Impact") {
+
+        pesan +=
+          "🌏 Server: " +
+          encodeURIComponent(server) +
+          "%0A";
+
+      }
+
+
+      pesan +=
+        "%0AMohon info harga dan prosesnya ya kak.";
+
+
+      window.open(
+        "https://wa.me/" +
+        nomorWA +
+        "?text=" +
+        pesan,
+        "_blank"
+      );
+
+    }
+
+
+    // Jalankan saat website dibuka
+    ubahGame();
+
+  </script>
+
+</body>
+</html>
